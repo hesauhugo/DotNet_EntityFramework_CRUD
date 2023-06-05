@@ -105,3 +105,78 @@
 ```
 * Na base de dados a tabela `EFMIgrationsHistory` serve para armazenar as migrations já executadas, para não duplicar tabelas.
 * Na base é possível ver que existe a tabela Contado dentro da base agenda
+
+# Post
+* criar o construtor passando o context
+* metodo creat colocar o atributo `httpPost` e o parâmetro `contato`
+
+```csharp 
+
+    [ApiController]
+    [Route("[Controller]")]
+    public class ContatoController:ControllerBase
+    {
+        private readonly AgendaContext _context;
+        public ContatoController(AgendaContext context){
+            _context = context;
+        }
+
+        [HttpPost()]
+        public IActionResult Create(Contato contato){
+            _context.Add(contato);
+            _context.SaveChanges();
+            return Ok(contato);
+        }
+        
+    }
+
+```
+
+# Obter pelo ID
+```csharp
+    [HttpGet("{id}")]
+    public IActionResult ObterPeloID(int id){
+        
+        var contato = _context.Contatos.Find(id);
+        if(contato==null)
+            return NotFound();
+
+        return Ok(contato);
+    }
+```
+
+# Atualizando dado
+```csharp
+    [HttpPut("{id}")]
+    public IActionResult Atualizar(int id, Contato contato){
+        
+        var contatoBanco = _context.Contatos.Find(id);
+        if(contatoBanco==null)
+            return NotFound();
+
+        contatoBanco.Nome=contato.Nome;
+        contatoBanco.Telefone = contato.Telefone;
+        contatoBanco.Ativo = contato.Ativo;
+        _context.Contatos.Update(contatoBanco);
+        _context.SaveChanges();
+
+        return Ok(contatoBanco);
+
+    }
+```
+# deletando dado
+```csharp
+        [HttpDelete("{id}")]
+        public IActionResult Deletar(int id){
+            
+            var contatoBanco = _context.Contatos.Find(id);
+            if(contatoBanco==null)
+                return NotFound();
+
+            _context.Contatos.Remove(contatoBanco);
+            _context.SaveChanges();
+            
+            return NoContent();
+
+        }
+```
