@@ -180,3 +180,31 @@
 
         }
 ```
+# Obtendo pelo nome
+```csharp
+        [HttpGet("ObterPorNome/{nome}")]
+        public IActionResult ObterPorNome(string nome){
+
+            var contatos = _context.Contatos.Where(x=> x.Nome.Contains(nome));
+
+            if(contatos==null)
+                return NotFound();
+
+            return Ok(contatos);
+        }
+```
+
+# Verbos HTTP
+* .[https://www.restapitutorial.com/lessons/httpmethods.html]
+
+# Retornando o endpoint
+
+```csharp
+        [HttpPost()]
+        public IActionResult Create(Contato contato){
+            _context.Add(contato);
+            _context.SaveChanges();
+            return CreatedAtAction(nameof(ObterPeloID),new{id = contato.Id}, contato);
+        }
+
+```

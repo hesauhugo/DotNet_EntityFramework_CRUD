@@ -21,7 +21,7 @@ namespace DotNet_EntityFramework_CRUD.Controllers
         public IActionResult Create(Contato contato){
             _context.Add(contato);
             _context.SaveChanges();
-            return Ok(contato);
+            return CreatedAtAction(nameof(ObterPeloID),new{id = contato.Id}, contato);
         }
 
         [HttpGet("{id}")]
