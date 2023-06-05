@@ -91,3 +91,9 @@
         options.UseSqlServer(builder.Configuration.GetconnectionString("ConexaoPadrao"))
     )
 ```
+# Migrations
+* Executar o banco de dados
+* Criando uma migration
+```console
+    dotnet-ef migrations add CriacaoTabelaContato
+```
