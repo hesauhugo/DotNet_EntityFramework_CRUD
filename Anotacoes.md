@@ -97,3 +97,9 @@
 ```console
     dotnet-ef migrations add CriacaoTabelaContato
 ```
+* serão criadas tres classes dentro de uma pasta chamada Migrations, de forma automatica pelo entity framework
+* Uma classe possui o nome no singular `Contato` porém no banco de dados por padrão é no plural `Contatos`
+* para aplicar a migration
+```console
+     dotnet-ef database update
+```
