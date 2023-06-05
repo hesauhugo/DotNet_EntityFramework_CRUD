@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "G:\\Meu Drive\\.Net\\DotNet_Introducao_API\\DotNet_Introducao_API.csproj": {}
+    "G:\\Meu Drive\\.Net\\DotNet_EntityFramework_CRUD\\DotNet_Introducao_API.csproj": {}
   },
   "projects": {
-    "G:\\Meu Drive\\.Net\\DotNet_Introducao_API\\DotNet_Introducao_API.csproj": {
+    "G:\\Meu Drive\\.Net\\DotNet_EntityFramework_CRUD\\DotNet_Introducao_API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\Meu Drive\\.Net\\DotNet_Introducao_API\\DotNet_Introducao_API.csproj",
+        "projectUniqueName": "G:\\Meu Drive\\.Net\\DotNet_EntityFramework_CRUD\\DotNet_Introducao_API.csproj",
         "projectName": "DotNet_Introducao_API",
-        "projectPath": "G:\\Meu Drive\\.Net\\DotNet_Introducao_API\\DotNet_Introducao_API.csproj",
+        "projectPath": "G:\\Meu Drive\\.Net\\DotNet_EntityFramework_CRUD\\DotNet_Introducao_API.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "G:\\Meu Drive\\.Net\\DotNet_Introducao_API\\obj\\",
+        "outputPath": "G:\\Meu Drive\\.Net\\DotNet_EntityFramework_CRUD\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -46,6 +46,16 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.5, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"
