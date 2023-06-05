@@ -103,3 +103,5 @@
 ```console
      dotnet-ef database update
 ```
+* Na base de dados a tabela `EFMIgrationsHistory` serve para armazenar as migrations já executadas, para não duplicar tabelas.
+* Na base é possível ver que existe a tabela Contado dentro da base agenda
